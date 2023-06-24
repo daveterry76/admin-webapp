@@ -6,7 +6,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Notifications = () => {
   const [notifications, setNotifications] = useState([{
-    icon: 'src/pages/main/home-components/notif-icon.png',
+    icon: 'https://i.ibb.co/7kh4vFR/notif-icon.png',
     title: 'Lorem ipsum',
     number: 2345,
     date: 'Today, 29th April 2023'
@@ -15,7 +15,7 @@ const Notifications = () => {
   const addNotifications = () => {
     setNotifications([
       ...notifications, 
-      { icon:'src/pages/main/home-components/notif-icon.png', title: 'Lorem ipsum', number: 2345, date: 'Today, 29th April 2023' }
+      { icon:'https://i.ibb.co/7kh4vFR/notif-icon.png', title: 'Lorem ipsum', number: 2345, date: 'Today, 29th April 2023' }
     ])
   }
 

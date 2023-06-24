@@ -6,7 +6,7 @@ const Profile = () => {
       <div className='bg-white rounded-md flex justify-between w-[35%] px-6 py-2'>
         <div className='flex cursor-pointer'>
           <div className='mr-3'>
-            <img className='h-8 w-8 bg-[#699BF72B] rounded-full' src='src\pages\main\home-components\profile-img.png' alt='profile img' />
+            <img className='h-8 w-8 bg-[#699BF72B] rounded-full' src='https://i.ibb.co/fFN64cS/profile-img.png' alt='profile img' />
           </div>
           <div>
             <h3 className='text-sm font-bold'>

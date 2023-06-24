@@ -33,7 +33,7 @@ const Cards = () => {
                 <div className="flex justify-between">
                     <div>
                         <div className='rounded-full h-fit w-fit bg-[#1974CD24] mb-3 p-4'>
-                            <img className='w-4 h-4' src='src\pages\main\home-components\book-advert.png' alt='book advert' />
+                            <img className='w-4 h-4' src='https://i.ibb.co/KV5hGrg/book-advert.png' alt='book advert' />
                         </div>
                         <h3 className="font-bold text-md">Book an advert</h3>
                     </div>
@@ -43,7 +43,7 @@ const Cards = () => {
                 </div>
                 <div className="flex justify-between mt-4">
                     <img src={bookAdvPrev <= bookAdvCurrent ? `${image[0].redChange}` : `${image[0].greenChange}`} className='h-8 w-16' />
-                    {bookAdvPercentageInc < 0 ? <p className="pt-2 text-red-500"> {bookAdvPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-green-500"> {bookAdvPercentageInc.toFixed(2)} %</p>}
+                    {bookAdvPercentageInc < 0 ? <p className="pt-2 text-sm text-red-500 bg-red-200 px-3 rounded-2xl"> {bookAdvPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-sm text-green-500 bg-green-200 px-3 rounded-2xl"> {bookAdvPercentageInc.toFixed(2)} %</p>}
                 </div>
             </div>
 
@@ -52,7 +52,7 @@ const Cards = () => {
                 <div className="flex justify-between">
                     <div>
                         <div className='rounded-full h-fit w-fit bg-[#1974CD24] mb-3 p-4'>
-                            <img className='w-4 h-4' src='src\pages\main\home-components\payments.png' alt='payment' />
+                            <img className='w-4 h-4' src='https://i.ibb.co/dJpWCm5/payments.png' alt='payments' />
                         </div>
                         <h3 className="font-bold text-md">Payments</h3>
                     </div>
@@ -62,7 +62,7 @@ const Cards = () => {
                 </div>
                 <div className="flex justify-between mt-4">
                     <img src={paymentPrev <= paymentCurrent ? `${image[0].redChange}` : `${image[0].greenChange}`} className='h-8 w-16' />
-                    {paymentPercentageInc < 0 ? <p className="pt-2 text-red-500"> {paymentPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-green-500"> {paymentPercentageInc.toFixed(2)} %</p>}
+                    {paymentPercentageInc < 0 ? <p className="pt-2 text-sm text-red-500 bg-red-200 px-3 rounded-2xl"> {paymentPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-sm text-green-500 bg-green-200 px-3 rounded-2xl"> {paymentPercentageInc.toFixed(2)} %</p>}
                 </div>
             </div>
 
@@ -71,7 +71,7 @@ const Cards = () => {
                 <div className="flex justify-between">
                     <div>
                         <div className='rounded-full h-fit w-fit bg-[#1974CD24] mb-3 p-4'>
-                            <img className='w-4 h-4' src='src\pages\main\home-components\brand-advert.png' alt='book advert' />
+                            <img className='w-4 h-4' src='https://i.ibb.co/jvcxx2Q/brand-advert.png' alt='brand adverts' />
                         </div>
                         <h3 className="font-bold text-md">Brand advert</h3>
                     </div>
@@ -81,7 +81,7 @@ const Cards = () => {
                 </div>
                 <div className="flex justify-between mt-4">
                     <img src={brandAdvPrev <= brandAdvCurrent ? `${image[0].redChange}` : `${image[0].greenChange}`} className='h-8 w-16' />
-                    {brandAdvPercentageInc < 0 ? <p className="pt-2 text-red-500"> {brandAdvPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-green-500"> {brandAdvPercentageInc.toFixed(2)} %</p>}
+                    {brandAdvPercentageInc < 0 ? <p className="pt-2 text-sm text-red-500 bg-red-200 px-3 rounded-2xl"> {brandAdvPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-sm text-green-500 bg-green-200 px-3 rounded-2xl"> {brandAdvPercentageInc.toFixed(2)} %</p>}
                 </div>
             </div>
 
@@ -109,7 +109,7 @@ const Cards = () => {
                 </div>
                 <div className="flex justify-between mt-4">
                     <img src={vasPrev <= vasCurrent ? `${image[0].redChange}` : `${image[0].greenChange}`} className='h-8 w-16' />
-                    {vasPercentageInc < 0 ? <p className="pt-2 text-red-500"> {vasPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-green-500"> {vasPercentageInc.toFixed(2)} %</p>}
+                    {vasPercentageInc < 0 ? <p className="pt-2 text-sm text-red-500 bg-red-200 px-3 rounded-2xl"> {vasPercentageInc.toFixed(2)} %</p> : <p className="pt-2 text-sm text-green-500 bg-green-200 px-3 rounded-2xl"> {vasPercentageInc.toFixed(2)} %</p>}
                 </div>
             </div>
         </div>
