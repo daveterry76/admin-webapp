@@ -5,7 +5,7 @@ const Searchbar = () => {
 
   return (
     <>
-        <div className='bg-white rounded-xl w-[45%] h-fit p-2 flex justify-center'>
+        <div className='bg-white rounded-xl w-[70%] h-fit p-2 flex justify-center'>
             <div className='flex justify-between h-8 w-full relative'>
                 <input 
                     type="text"
