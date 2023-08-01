@@ -1,19 +1,55 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom";
-
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import axios from "axios";
 
 const SignIn = () => {
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const [ user, setUser ] = useState([]);
+  const [ profile, setProfile ] = useState([]);
   const navigate = useNavigate();
 
   const handleSubmit = () => {
     navigate('/home');
   }
+  // client id = 949770359657-4oiout43buu6ntr180gq2opsn3id9b6e.apps.googleusercontent.com
+
+  const login = useGoogleLogin({
+        onSuccess: (codeResponse) => setUser(codeResponse),
+        onError: (error) => console.log('Login Failed:', error)
+  });
+  const logOut = () => {
+    googleLogout();
+    setProfile(null);
+};
+
+  useEffect(
+    () => {
+        if (user) {
+            axios
+                .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                    headers: {
+                        Authorization: `Bearer ${user.access_token}`,
+                        Accept: 'application/json'
+                    }
+                })
+                .then((res) => {
+                    setProfile(res.data);
+                    console.log(res.data);
+                })
+                .catch((err) => console.log(err));
+        }
+    },
+    [ user ]
+);
 
   return (
     <>
-    <div className="bg-[#919191] h-screen w-screen flex justify-center items-center font-lato">
+    {profile && user.access_token != undefined ?(
+        navigate('/home')
+      ) : (
+        <div className="bg-[#919191] h-screen w-screen flex justify-center items-center font-lato">
       <div className="bg-white h-[36rem] w-[75rem]">
         <div className="flex justify-center items-center p-6">  
           <div className="w-1/2 bg-blue-100 rounded-md flex justify-center">
@@ -60,7 +96,7 @@ const SignIn = () => {
                 <hr className="w-full mt-3" /><span className="mx-2">Or</span><hr className="w-full mt-3"/>
               </div>
 
-              <button className="rounded-2xl py-4 border-2 w-full flex justify-center">
+              <button onClick={() => login()} className="rounded-2xl py-4 border-2 w-full flex justify-center">
                 <img className="h-6 w-6 mt-1" src="https://i.ibb.co/ZBRPZBn/google-icon.png" alt='google icon' />
                 <p className="mt-1 mx-2">Continue with Google</p>
               </button>
@@ -69,6 +105,8 @@ const SignIn = () => {
         </div>
       </div>
     </div>
+    )}
+    
     </>
   )
 }
