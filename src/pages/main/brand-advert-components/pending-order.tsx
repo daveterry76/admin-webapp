@@ -4,7 +4,7 @@ const PendingOrder = () => {
   return (
     <>
         <div className='rounded-md bg-white p-4 mt-4 h-fit'>
-            <h3 className='text-right text-sm opacity-50'>Today, 30th April 2023</h3>
+            {/* <h3 className='text-right text-sm opacity-50'>Today, 30th April 2023</h3>
             <div className='mt-5 flex flex-col items-center'>
                 <h2 className='font-bold text-2xl'>Pending Order</h2>
                 <div className='bg-[#66666624] h-24 w-24 p-6 rounded-full mt-5'>
@@ -28,7 +28,7 @@ const PendingOrder = () => {
                 <button className='bg-[#1974CD] rounded-md py-3 px-8 text-white'>
                     Resolve
                 </button>
-            </div>
+            </div> */}
         </div>
     </>
   )

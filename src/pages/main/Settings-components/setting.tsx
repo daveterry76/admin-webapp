@@ -1,7 +1,6 @@
 import React from 'react'
-import orders from './orders.json'
 
-const AllVas = () => {
+const AllSettings = () => {
   return (
     <>
         <div className="bg-white rounded-md px-2 pb-3 pt-6 mt-4 mb-6">
@@ -9,7 +8,7 @@ const AllVas = () => {
 
             <div className="px-6 flex justify-between">
                 <div className="flex gap-1">
-                    <h3 className="text-xl font-bold">All Vas & Self Service - 12,546</h3>
+                    <h3 className="text-xl font-bold">All Payments - 12,546</h3>
                 </div>
                 <div className="flex gap-3">
                     <div className="rounded-md border cursor-pointer flex px-4 gap-3 w-fit">
@@ -50,4 +49,4 @@ const AllVas = () => {
   )
 }
 
-export default AllVas
+export default AllSettings

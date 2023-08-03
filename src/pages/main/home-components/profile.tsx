@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Profile = () => {
+  // console.log(profile);
+  
   return (
     <>
       <div className='bg-white rounded-md flex justify-between w-[35%] px-6 py-2'>
@@ -10,10 +12,13 @@ const Profile = () => {
           </div>
           <div>
             <h3 className='text-sm font-bold'>
-              Admin 2
+            {/* {profile.given_name || 'User'} */}
+            User
+
             </h3>
             <p className='text-[10px] opacity-70'>
-              Ibenemeikenna96@gmail.com
+            {/* {profile.email || 'User'} */}
+            Email
             </p>
           </div>
         </div>

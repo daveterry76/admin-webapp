@@ -7,19 +7,23 @@ import Profile from "../home-components/profile"
 import Searchbar from "../home-components/searchbar"
 import AllOrders from "./all-orders"
 import PendingOrder from "./pending-order"
-
+// import { useLocation } from 'react-router-dom';
 
 const Home = () => {
+  // const location = useLocation();
+  // const { profile } = location.state || {};
+  const [toggleState, setToggleState] = useState(0);
 
-  const [toggleState, setToggleState] = useState(1);
-
+  const handleToggleState = (index) => {
+    setToggleState(index);
+  };
 
   return (
     <>
         <div>
           <div className='flex gap-3'>
             <Searchbar />
-            <Profile />
+            <Profile  />
           </div>
           <div className='mt-2 rounded-xl bg-[#1974CD] flex justify-between w-full h-fit py-4 px-8'>
             <div>
@@ -38,10 +42,10 @@ const Home = () => {
               </div>
               <div className='flex justify-center'>
                   <div className="bg-white rounded-md flex gap-1 w-fit p-1">
-                    <button className="bg-[#1974CD] rounded-md px-8 py-1 text-white">All Orders</button>
-                    <button className="rounded-md px-8 py-1 text-black">Successful Orders</button>
-                    <button className="rounded-md px-8 py-1 text-black">Pending Orders</button>
-                    <button className="rounded-md px-8 py-1 text-black">Cancelled Orders</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 0 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(0)}>All Orders</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 1 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(1)}>Successful Orders</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 2 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(2)}>Pending Orders</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 3 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(3)}>Cancelled Orders</button>
                   </div>
               </div>
             </div>

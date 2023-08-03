@@ -4,18 +4,20 @@ import CountUpFn from './home-components/countup'
 import Cards from './home-components/cards'
 import Chart from './home-components/chart'
 import Notifications from './home-components/notifications'
-import { useState } from 'react'
-import Profile from './home-components/profile'
+import { useState, useEffect } from 'react'
+import Profile from './home-components/profile';
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
-
+  const location = useLocation();
+  const { profile } = location.state || {};
   return (
     <>
         <div>
           <div className='flex gap-3'>
             <Searchbar />
             <Date />
-            <Profile />
+            <Profile profile={profile}/>
           </div>
           <div className='mt-2 rounded-xl bg-[#1974CD] flex justify-between w-full h-fit py-4 px-8'>
             <div>

@@ -21,7 +21,7 @@ const AllPayments = () => {
                 </div>
             </div>
             <div className='px-6 mt-6'>
-                {orders.map((order) => (
+                {/* {orders.map((order) => (
                     <div className='my-5 flex justify-between'>
                         <div className='flex'>
                             <svg className='mr-4 mt-1 mb-4 h-8 w-8 p-2 bg-[#1974CD24] rounded-full' viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@ const AllPayments = () => {
                             <h4 className='opacity-50 text-sm'>{order.date}</h4>
                         </div>
                     </div>
-                ))}
+                ))} */}
             </div>
         </div>
     </>

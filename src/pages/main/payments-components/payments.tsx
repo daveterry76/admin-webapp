@@ -14,6 +14,9 @@ const Payments = () => {
 
   const [toggleState, setToggleState] = useState(1);
 
+  const handleToggleState = (index) => {
+    setToggleState(index);
+  };
 
   return (
     <>
@@ -33,10 +36,10 @@ const Payments = () => {
               </div>
               <div className='flex justify-center'>
                   <div className="bg-white rounded-md flex gap-1 w-fit p-1">
-                    <button className="bg-[#1974CD] rounded-md px-8 py-1 text-white">All Payments</button>
-                    <button className="rounded-md px-8 py-1 text-black">Successful Payments</button>
-                    <button className="rounded-md px-8 py-1 text-black">Pending Payments</button>
-                    <button className="rounded-md px-8 py-1 text-black">Cancelled Payments</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 0 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(0)}>All Payments</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 1 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(1)}>Successful Payments</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 2 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(2)}>Pending Payments</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 3 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(3)}>Cancelled Payments</button>
                   </div>
               </div>
             </div>

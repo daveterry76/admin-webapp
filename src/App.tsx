@@ -8,6 +8,7 @@ import BrandAdvertMain from "./pages/main/brand-advert-components/brand-advert-m
 import BookAdvertMain from "./pages/main/book-advert-components/book-advert-main"
 import PaymentsMain from "./pages/main/payments-components/payment-main"
 import VasMain from "./pages/main/vas-components/vas-main"
+import SettingsMain from "./pages/main/Settings-components/settings-main"
 
 
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/booked-adverts" element={<BookAdvertMain />} />
               <Route path="/payments" element={<PaymentsMain />} />
               <Route path="/vas-self-service" element={<VasMain />} />
+              <Route path="/settings" element={<SettingsMain />} />
         </Routes>
       
     

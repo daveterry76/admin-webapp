@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
   const [emailInput, setEmailInput] = useState('');
@@ -8,9 +9,29 @@ const SignUp = () => {
   const navigate = useNavigate();
 
 
-  const handleSignup = () => {
-    navigate('/verify-email');
-  }
+  const apiUrl = "https://picadailys-app.onrender.com/api/v1/docs";
+
+  const handleSignup = async (e) => {
+    e.preventDefault(); // Prevent form submission to avoid page reload
+
+    try {
+      const response = await axios.post(`${apiUrl}/accounts/accounts_register_create`, {
+        email: emailInput,
+        password: createPassword,
+        confirmPassword: confirmPassword,
+        // Other form data to be sent to the API
+      });
+
+      console.log(response.data); // Handle the API response
+
+      // Assuming the API returns some success status, navigate to the verify-email page
+      navigate("/verify-email");
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle errors if any
+    }
+  };
+  
   return (
     <>
     <div className="bg-[#919191] h-screen w-screen flex justify-center items-center font-lato">

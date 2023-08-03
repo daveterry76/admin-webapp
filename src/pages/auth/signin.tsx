@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from "axios";
+import Profile from "../main/home-components/profile";
 
 const SignIn = () => {
   const [emailInput, setEmailInput] = useState('');
@@ -11,14 +12,19 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    navigate('/home');
+    navigate('/profile');
+    // navigate('/home');
   }
   // client id = 949770359657-4oiout43buu6ntr180gq2opsn3id9b6e.apps.googleusercontent.com
 
   const login = useGoogleLogin({
-        onSuccess: (codeResponse) => setUser(codeResponse),
-        onError: (error) => console.log('Login Failed:', error)
+    onSuccess: (codeResponse) => {
+      setUser(codeResponse)
+      // navigate('/home', { state: { profile: profile } });
+    },
+    onError: (error) => console.log('Login Failed:', error)
   });
+  
   const logOut = () => {
     googleLogout();
     setProfile(null);
@@ -37,6 +43,7 @@ const SignIn = () => {
                 .then((res) => {
                     setProfile(res.data);
                     console.log(res.data);
+                    navigate("/home", { state: { profile: res.data } });
                 })
                 .catch((err) => console.log(err));
         }
@@ -44,10 +51,11 @@ const SignIn = () => {
     [ user ]
 );
 
+
   return (
     <>
     {profile && user.access_token != undefined ?(
-        navigate('/home')
+        <Profile profile={profile} />
       ) : (
         <div className="bg-[#919191] h-screen w-screen flex justify-center items-center font-lato">
       <div className="bg-white h-[36rem] w-[75rem]">

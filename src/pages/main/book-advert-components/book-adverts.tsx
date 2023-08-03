@@ -12,8 +12,11 @@ import PendingOrder from "./pending-order"
 
 const BookAdverts = () => {
 
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(0);
 
+  const handleToggleState = (index) => {
+    setToggleState(index);
+  };
 
   return (
     <>
@@ -33,10 +36,11 @@ const BookAdverts = () => {
               </div>
               <div className='flex justify-center'>
                   <div className="bg-white rounded-md flex gap-1 w-fit p-1">
-                    <button className="bg-[#1974CD] rounded-md px-8 py-1 text-white">All Booked Adverts</button>
-                    <button className="rounded-md px-8 py-1 text-black">Successful Adverts</button>
-                    <button className="rounded-md px-8 py-1 text-black">Pending Adverts</button>
-                    <button className="rounded-md px-8 py-1 text-black">Cancelled Adverts</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 0 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(0)}>All Booked Adverts</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 1 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(1)}>Successful Adverts</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 2 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(2)}>Pending Adverts</button>
+                    <button className={"rounded-md px-8 py-1 " + (toggleState === 3 ? 'bg-[#1974CD] text-white' : 'bg-[#FFF] text-black')} onClick={() => handleToggleState(3)}>Cancelled Adverts</button>
+                    
                   </div>
               </div>
             </div>
